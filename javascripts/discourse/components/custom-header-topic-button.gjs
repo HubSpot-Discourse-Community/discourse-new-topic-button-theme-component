@@ -82,7 +82,7 @@ export default class CustomHeaderTopicButton extends Component {
         @translatedTitle={{this.createTopicTitle}}
         @icon={{settings.new_topic_button_icon}}
         id="new-create-topic"
-        class="btn-default header-create-topic"
+        class="btn-primary header-create-topic"
       />
     {{else if settings.show_to_anon}}
       <DButton
@@ -91,7 +91,7 @@ export default class CustomHeaderTopicButton extends Component {
         @translatedTitle={{this.createTopicTitle}}
         @icon={{settings.new_topic_button_icon}}
         id="new-create-topic"
-        class="btn-default header-create-topic"
+        class="btn-primary header-create-topic"
       />
     {{/if}}
   </template>

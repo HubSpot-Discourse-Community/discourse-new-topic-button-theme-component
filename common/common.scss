@@ -1,8 +1,9 @@
 @use "lib/viewport";
 
-.before-header-panel-outlet {
+.contents .before-header-panel-outlet {
+  grid-column: 4; // align with other elements in the user context area of header
   margin-left: auto;
-
+  margin-right: 10px;
   + .panel {
     margin-left: 0;
   }
@@ -17,7 +18,7 @@
   }
 }
 
-@include viewport.until(sm) {
+@include viewport.until(xl) {
   #new-create-topic span {
     display: none;
   }
@@ -42,4 +43,16 @@
     position: relative;
     top: 0.1em; // optical alignment
   }
+}
+
+@include viewport.until(sm) {
+  #new-create-topic {
+    display: none;
+  }
+}
+
+// fix issues with floating search input bumping against logo and this button
+.floating-search-input-wrapper .search-input {
+  margin-left: 15px;
+  margin-right: 15px;
 }
