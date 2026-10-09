@@ -28,6 +28,10 @@
   }
 }
 
+#new-create-topic .d-icon {
+  color: var(--hubspot-brand-text);
+}
+
 @if $hide_default_button == "true" {
   .navigation-controls #create-topic,
   .navigation-controls #create-topic + .fk-d-menu__trigger {
