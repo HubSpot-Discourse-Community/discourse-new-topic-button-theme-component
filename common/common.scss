@@ -1,5 +1,46 @@
 @use "lib/viewport";
 
+@if $hide_default_button == "true" {
+  .navigation-controls #create-topic,
+  .navigation-controls #create-topic + .fk-d-menu__trigger {
+    display: none !important;
+  }
+}
+
+#new-create-topic {
+  .d-icon {
+     color: var(--hubspot-brand-text);
+  }
+  @include viewport.until(xl) {
+    span {
+      display: none;
+    }
+
+    .d-icon {
+      margin-right: 0;
+    }
+  }
+  @include viewport.until(sm) {
+    display: none;
+  }
+}
+
+.anon {
+  #new-create-topic {
+    // match default login button size
+    font-size: var(--font-down-1);
+    margin-right: 0.5em;
+    position: relative;
+    top: 0.1em; // optical alignment
+  }
+}
+
+// fix issues with floating search input bumping against logo and this button
+.floating-search-input-wrapper .search-input {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
 .contents .before-header-panel-outlet {
   grid-column: 4; // align with other elements in the user context area of header
   margin-left: auto;
@@ -16,47 +57,4 @@
   .fk-d-tooltip__trigger {
     height: unset;
   }
-}
-
-@include viewport.until(xl) {
-  #new-create-topic span {
-    display: none;
-  }
-
-  #new-create-topic .d-icon {
-    margin-right: 0;
-  }
-}
-
-#new-create-topic .d-icon {
-  color: var(--hubspot-brand-text);
-}
-
-@if $hide_default_button == "true" {
-  .navigation-controls #create-topic,
-  .navigation-controls #create-topic + .fk-d-menu__trigger {
-    display: none !important;
-  }
-}
-
-.anon {
-  #new-create-topic {
-    // match default login button size
-    font-size: var(--font-down-1);
-    margin-right: 0.5em;
-    position: relative;
-    top: 0.1em; // optical alignment
-  }
-}
-
-@include viewport.until(sm) {
-  #new-create-topic {
-    display: none;
-  }
-}
-
-// fix issues with floating search input bumping against logo and this button
-.floating-search-input-wrapper .search-input {
-  margin-left: 15px;
-  margin-right: 15px;
 }
